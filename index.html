@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>მოვწიოთ რამე? 🌿</title>
+    <title>წამოხვალ დეითზე? ❤️</title>
     <style>
         * {
             margin: 0;
@@ -17,35 +17,31 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* მუქი, კვამლისფერი და მწვანე გრადიენტი */
-            background: linear-gradient(135deg, #132a13, #31572c, #4f772d);
+            background: linear-gradient(135deg, #ffe5ec, #ffb3c6);
             overflow: hidden;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.95);
+            background: white;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
             max-width: 450px;
             width: 90%;
-            border: 3px solid #90a955;
-            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
 
         h1 {
-            color: #132a13;
+            color: #ff477e;
             margin-bottom: 20px;
             font-size: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         p {
-            color: #31572c;
+            color: #4f5d75;
             margin-bottom: 30px;
             font-size: 1.1rem;
-            font-weight: 500;
         }
 
         .btn-container {
@@ -67,95 +63,88 @@
         }
 
         #yesBtn {
-            background-color: #4f772d;
+            background-color: #ff477e;
             color: white;
-            box-shadow: 0 5px 15px rgba(79, 119, 45, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 71, 126, 0.4);
         }
 
         #yesBtn:hover {
-            background-color: #90a955;
+            background-color: #ff7096;
             transform: scale(1.05);
         }
 
         #noBtn {
-            background-color: #e9ecef;
+            background-color: #e2eafc;
             color: #4f5d75;
             position: absolute;
             white-space: nowrap;
         }
 
+        /* მეორე გვერდის სტილები (კალენდარი) */
         .hidden {
             display: none !important;
         }
 
         input[type="datetime-local"] {
             padding: 12px;
-            border: 2px solid #90a955;
+            border: 2px solid #ffb3c6;
             border-radius: 10px;
             font-size: 1rem;
-            color: #132a13;
+            color: #4f5d75;
             outline: none;
             margin-bottom: 20px;
             width: 100%;
-            font-weight: bold;
         }
 
         input[type="datetime-local"]:focus {
-            border-color: #4f772d;
+            border-color: #ff477e;
         }
 
         #submitDate {
-            background-color: #31572c;
+            background-color: #2ec4b6;
             color: white;
             width: 100%;
-            box-shadow: 0 5px 15px rgba(49, 87, 44, 0.4);
+            box-shadow: 0 5px 15px rgba(46, 196, 182, 0.4);
         }
 
         #submitDate:hover {
-            background-color: #4f772d;
+            background-color: #3bd6c6;
         }
 
-        .smoke-emoji {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        .success-gif {
+            font-size: 3rem;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
 
-    <!-- ეტაპი 1: შეთავაზება -->
+    <!-- პირველი ეტაპი: კითხვა -->
     <div id="questionCard" class="card">
-        <div class="smoke-emoji">🍁💨</div>
-        <h1>კაროჩე როდის მოვწიოთ პლანი?</h1>
-        <p>უცებ გააძრე ეხლა თავი არიფასო... 😜</p>
+        <div style="font-size: 4rem; margin-bottom: 10px;">✨</div>
+        <h1>წამოხვალ ჩემთან დეითზე?</h1>
+        <p>არჩევანის უფლება გაქვს, მაგრამ კარგად დაფიქრდი! 😉</p>
         
         <div class="btn-container">
-            <button id="yesBtn">დღეს 😮‍💨</button>
-            <button id="noBtn">აღარ მოვწიოთ 🤫</button>
+            <button id="yesBtn">კი 🥰</button>
+            <button id="noBtn">არა 👁️👄👁️</button>
         </div>
     </div>
 
-    <!-- ეტაპი 2: დროის შეთანხმება -->
+    <!-- მეორე ეტაპი: დროის არჩევა -->
     <div id="dateCard" class="card hidden">
-        <div class="smoke-emoji">🔥🤙</div>
-        <h1>გაასწორა! 🔥</h1>
-        <p>აბა, როდის ჩავყაროთ? აარჩიე დრო:</p>
+        <div class="success-gif">🎉</div>
+        <h1>იდეალურია!</h1>
+        <p>ახლა კი აარჩიე შენთვის მოსახერხებელი დღე და საათი:</p>
         
         <input type="datetime-local" id="datePicker">
-        <button id="submitDate">შევთანხმდით 🤝</button>
+        <button id="submitDate">დადასტურება ✨</button>
     </div>
 
-    <!-- ეტაპი 3: ფინალი -->
+    <!-- მესამე ეტაპი: ფინალი -->
     <div id="finalCard" class="card hidden">
-        <div class="smoke-emoji">🥦✨🕺</div>
-        <h1>ბაზარი არაა!</h1>
+        <div class="success-gif">❤️🥳</div>
+        <h1>შევთანხმდით!</h1>
         <p id="finalMessage"></p>
     </div>
 
@@ -170,31 +159,36 @@
         const datePicker = document.getElementById('datePicker');
         const finalMessage = document.getElementById('finalMessage');
 
-        // გაქცევის ლოგიკა
+        // "არა" ღილაკის გაქცევის ლოგიკა
         function moveNoButton() {
-            const padding = 60;
+            // ეკრანის ზომების გათვალისწინება, რომ ღილაკი ეკრანს გარეთ არ გავარდეს
+            const padding = 50;
             const maxX = window.innerWidth - noBtn.offsetWidth - padding;
             const maxY = window.innerHeight - noBtn.offsetHeight - padding;
             
+            // შემთხვევითი კოორდინატები (ცენტრიდან მოშორებით)
             const randomX = Math.floor(Math.random() * maxX);
             const randomY = Math.floor(Math.random() * maxY);
             
+            // ღილაკის გადაადგილება absolute პოზიციონირებით მთელ ეკრანზე
             noBtn.style.position = 'fixed';
             noBtn.style.left = randomX + 'px';
             noBtn.style.top = randomY + 'px';
         }
 
+        // მობილურზეც და კომპიუტერზეც რომ იმუშაოს
         noBtn.addEventListener('mouseenter', moveNoButton);
         noBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
+            e.preventDefault(); // რომ არ დაეჭიროს ეგრევე
             moveNoButton();
         });
 
-        // "კი" ღილაკი
+        // "კი" ღილაკზე დაჭერა
         yesBtn.addEventListener('click', () => {
             questionCard.classList.add('hidden');
             dateCard.classList.remove('hidden');
             
+            // კალენდარში დეფოლტად დღევანდელი დღე რომ ჩაჯდეს
             const now = new Date();
             now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
             datePicker.min = now.toISOString().slice(0, 16);
@@ -206,16 +200,17 @@
             const selectedDate = new Date(datePicker.value);
             
             if (!datePicker.value) {
-                alert('დრო მაინც აარჩიე, კაი კაცო 🥦');
+                alert('გთხოვს აარჩიო დრო 🥺');
                 return;
             }
 
+            // ფორმატირება ლამაზად წასაკითხად
             const options = { weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
             const formattedDate = selectedDate.toLocaleDateString('ka-GE', options);
 
             dateCard.classList.add('hidden');
             finalCard.classList.remove('hidden');
-            finalMessage.innerHTML = `მოკლედ, რიზლას და გრინდერს ვამზადებ <br><strong>${formattedDate}</strong>-ზე! 🚀`;
+            finalMessage.innerHTML = `მოკლედ, გელოდები: <br><strong>${formattedDate}</strong>-ზე! 🚀`;
         });
     </script>
 </body>
